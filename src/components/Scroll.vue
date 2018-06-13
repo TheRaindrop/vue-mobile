@@ -109,7 +109,20 @@ export default {
       console.log('touch moving:', event)
     },
     move (clientX) {
-      this.scrollX += (clientX - this.moveX)
+      // this.scrollX += (clientX - this.moveX)
+      // this.moveX = clientX
+      let mark = clientX - this.moveX > 0 ? 1 : 0
+      let n = Math.abs(clientX - this.moveX)
+      for (let i = 0; i < n; i++) {
+        this.time++
+        console.log(this.time)
+        if (mark) {
+          this.scrollX++
+        } else {
+          this.scrollX--
+        }
+      }
+      // this.scrollX += (event.clientX - this.moveX)
       this.moveX = clientX
     },
     touchEnd (event) {
