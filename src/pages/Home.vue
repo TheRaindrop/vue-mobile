@@ -1,11 +1,12 @@
 <template lang='pug'>
   div
-    p 1234
+    Scroll
 </template>
 
 <script>
+import Scroll from '@/components/Scroll.vue'
 export default {
-
+  components: {Scroll}
 }
 </script>
 
