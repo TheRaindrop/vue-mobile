@@ -14,8 +14,8 @@
 export default {
   data () {
     return {
-      leftScroll: -40,
-      rightScroll: 40,
+      leftScroll: -80,
+      rightScroll: 80,
       scrollX: 0,
       moveX: 0,
       clientX: 0
@@ -28,25 +28,25 @@ export default {
     touchMove () {
       this.moveX = event.touches[0].clientX - this.clientX
       this.clientX = event.touches[0].clientX
-      // if ((this.scrollX >= -40 && this.moveX > 0) || (this.scrollX <= 40 && this.moveX < 0)) {
+      // if ((this.scrollX >= -80 && this.moveX > 0) || (this.scrollX <= 80 && this.moveX < 0)) {
       //   this.scrollX += this.moveX
       // }
       console.log('scrollX: ', this.scrollX)
       console.log('moveX: ', this.moveX)
       console.log('--------------------------------------------------------------')
-      if (this.scrollX <= -40 && this.moveX < 0) {
+      if (this.scrollX <= -80 && this.moveX < 0) {
         console.log('cant be more left')
-      } else if (this.scrollX >= 40 && this.moveX > 0) {
+      } else if (this.scrollX >= 80 && this.moveX > 0) {
         console.log('cant be more right')
       } else {
         this.scrollX += this.moveX
       }
     },
     touchEnd () {
-      if (this.scrollX < -20) {
-        this.scrollX = -40
-      } else if (this.scrollX > 20) {
-        this.scrollX = 40
+      if (this.scrollX < -40) {
+        this.scrollX = -80
+      } else if (this.scrollX > 40) {
+        this.scrollX = 80
       } else {
         this.scrollX = 0
       }
@@ -59,11 +59,11 @@ export default {
   .cell-swipe {
     position: relative;
     overflow: hidden;
-    height: 40px;
+    height: 50px;
   }
   .cell-swipe__wrapper {
     transform: translate3d(0, 0, 0);
-    transition-duration: 0.6s;
+    transition-duration: 0.1s;
     transition-property: all;
     height: 100%;
   }
@@ -72,13 +72,15 @@ export default {
     height: 100%;
     top: 0;
     left: 0;
-    width: 40px;
+    width: 80px;
+    background: red;
   }
   .cell-swipe__right {
     position: absolute;
     height: 100%;
     top: 0;
     right: 0;
-    width: 40px;
+    width: 80px;
+    background: green;
   }
 </style>
