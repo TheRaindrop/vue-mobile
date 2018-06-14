@@ -186,6 +186,7 @@ export default {
 .card-list {
   display: flex;
   margin-top: 30px;
+  transition-property: transform;
   /* transition-duration: 300ms; */
 }
 .card-list__item {
