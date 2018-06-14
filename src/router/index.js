@@ -9,6 +9,17 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: resolve => require(['@/pages/Home.vue'], resolve)
+      // children: [
+      //   {
+      //     path: '/test',
+      //     component: resolve => require(['@/pages/Test.vue'], resolve)
+      //   }
+      // ]
+    },
+    {
+      path: '/test',
+      name: 'Test',
+      component: resolve => require(['@/pages/Test.vue'], resolve)
     }
   ]
 })
