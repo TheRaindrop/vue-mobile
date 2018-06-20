@@ -20,6 +20,11 @@ export default new Router({
       path: '/test',
       name: 'Test',
       component: resolve => require(['@/pages/Test.vue'], resolve)
+    },
+    {
+      path: '/barrage',
+      name: 'Barrage',
+      component: resolve => require(['@/pages/Barrage.vue'], resolve)
     }
   ]
 })
